@@ -1,36 +1,26 @@
-# Collect the Coins
+# Простой пинг-понг
 
-A tiny beginner-friendly game made with Python and Pygame. The goal is to collect yellow coins while avoiding the red enemy.
+Небольшая игра на Python и Pygame: игрок, бот и мяч.
 
-## Run the game
+## Запуск
 
-1. Install Python 3.
-2. Open a terminal in this folder.
-3. Install Pygame:
+```bash
+python -m pip install -r requirements.txt
+python main.py
+```
 
-   ```bash
-   python -m pip install -r requirements.txt
-   ```
+## Управление
 
-4. Start the game:
+- **Стрелка вверх** — двигать левую пластину вверх.
+- **Стрелка вниз** — двигать левую пластину вниз.
+- **Esc** — закрыть игру (или закрыть окно).
 
-   ```bash
-   python main.py
-   ```
+## Как устроен код
 
-## Controls
+Весь код игры находится в одном файле — `main.py`.
 
-- **WASD** or **arrow keys** — move
-- **R** — restart after game over
-- **Esc** — quit
+- `Paddle` — пластина. Игрок и бот используют один и тот же класс.
+- `Ball` — движение мяча и отскоки от стен и пластин.
+- `main()` — создаёт объекты и запускает игровой цикл.
 
-## How the code is organized
-
-Everything is in `main.py` to make the logic easy to follow:
-
-- `Player` — handles movement and drawing the player.
-- `Coin` — stores and draws a coin.
-- `Enemy` — moves from side to side.
-- `Game` — handles events, updates objects, checks collisions, draws the screen, and runs the main loop.
-
-The game uses simple rectangles and circles, so no image or sound assets are needed.
+Бот намеренно очень простой: он двигает свою пластину вверх или вниз, чтобы следовать за мячом.
